@@ -18,8 +18,12 @@ function Envelope({ letter }: Props) {
 
           <p>{letter.preview}</p>
 
+          <p className="sealed">
+            Sealed with love.
+          </p>
+
           <button onClick={() => setIsOpen(true)}>
-            Open Letter
+            Read when you're ready
           </button>
         </>
       ) : (
@@ -31,7 +35,7 @@ function Envelope({ letter }: Props) {
           </div>
 
           <button onClick={() => setIsOpen(false)}>
-            Close
+            Fold it away
           </button>
         </>
       )}
