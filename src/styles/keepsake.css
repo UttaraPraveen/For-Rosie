@@ -1,0 +1,70 @@
+.shelf {
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.shelf h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+
+.shelf p {
+  color: #777;
+  margin-top: 1rem;
+}
+
+.shelf-grid {
+  margin-top: 5rem;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 2rem;
+
+  max-width: 1200px;
+
+  margin-inline: auto;
+}
+
+.keepsake {
+  background: white;
+
+  border: 1px solid #ece6de;
+
+  border-radius: 28px;
+
+  padding: 3rem 2rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  transition: 0.3s;
+}
+
+.icon {
+  font-size: 3rem;
+}
+
+.keepsake h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.keepsake p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.keepsake span {
+  margin-top: auto;
+
+  color: #555;
+
+  font-size: 0.9rem;
+}
