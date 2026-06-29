@@ -1,4 +1,4 @@
-export type Keepsake = {
+export type KeepsakeData = {
   id: string;
   title: string;
   subtitle: string;
@@ -6,7 +6,7 @@ export type Keepsake = {
   route: string;
 };
 
-export const keepsakes: Keepsake[] = [
+export const keepsakes: KeepsakeData[] = [
   {
     id: "letters",
     title: "Letters for Every Age",

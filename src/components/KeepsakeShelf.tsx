@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Keepsake from "./Keepsake";
-import { keepsakes } from "../data/keepsake";
+import { keepsakes } from "../data/keepsakes";
 
 import "../styles/keepsakes.css";
 

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import type { Keepsake } from "../data/keepsake";
+import type { KeepsakeData } from "../data/keepsakes";
 
 type Props = {
-  keepsake: Keepsake;
+  keepsake: KeepsakeData;
 };
 
 function Keepsake({ keepsake }: Props) {
