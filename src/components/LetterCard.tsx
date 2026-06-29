@@ -1,25 +1,32 @@
 import { useState } from "react";
-import type { Letter } from "../data/letters";
 
-type Props = {
-  letter: Letter;
+type LetterCardProps = {
+  header: string;
+  title: string;
+  preview: string;
+  content: string;
 };
 
-function Envelope({ letter }: Props) {
+function LetterCard({
+  header,
+  title,
+  preview,
+  content,
+}: LetterCardProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="envelope">
+    <div className="letter-card">
       {!isOpen ? (
         <>
-          <h2>Age {letter.age}</h2>
+          <h2>{header}</h2>
 
-          <h3>{letter.title}</h3>
+          <h3>{title}</h3>
 
-          <p>{letter.preview}</p>
+          <p>{preview}</p>
 
           <p className="sealed">
-            Sealed with love.
+            Written just for you.
           </p>
 
           <button onClick={() => setIsOpen(true)}>
@@ -28,10 +35,14 @@ function Envelope({ letter }: Props) {
         </>
       ) : (
         <>
-          <h2>{letter.title}</h2>
+          <h2>{title}</h2>
 
           <div className="letter-paper">
-            {letter.content}
+            <p className="greeting">
+              For Rosie,
+            </p>
+
+            <p>{content}</p>
           </div>
 
           <button onClick={() => setIsOpen(false)}>
@@ -43,4 +54,4 @@ function Envelope({ letter }: Props) {
   );
 }
 
-export default Envelope;
+export default LetterCard;

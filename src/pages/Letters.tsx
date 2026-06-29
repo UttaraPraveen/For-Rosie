@@ -1,4 +1,4 @@
-import Envelope from "../components/Envelope";
+import LetterCard from "../components/LetterCard";
 import { letters } from "../data/letters";
 import "../styles/letters.css";
 
@@ -15,9 +15,12 @@ function Letters() {
 
       <div className="letters-grid">
         {letters.map((letter) => (
-          <Envelope
+          <LetterCard
             key={letter.id}
-            letter={letter}
+            header={`Age ${letter.age}`}
+            title={letter.title}
+            preview={letter.preview}
+            content={letter.content}
           />
         ))}
       </div>
