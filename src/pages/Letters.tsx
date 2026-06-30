@@ -9,7 +9,7 @@ function Letters() {
 
       <p>
         Some words are meant for the person you are today.
-        Others are waiting patiently for the person you'll
+        Others are waiting patiently for the person you&apos;ll
         become.
       </p>
 
@@ -17,7 +17,6 @@ function Letters() {
         {letters.map((letter) => (
           <LetterCard
             key={letter.id}
-            letter={letter}
             header={`Age ${letter.age}`}
             title={letter.title}
             preview={letter.preview}
