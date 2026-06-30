@@ -1,0 +1,43 @@
+.constellation-page {
+  min-height: 100vh;
+  background: #09111f;
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.constellation-page h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 4rem;
+}
+
+.constellation-page p {
+  margin-top: 1rem;
+  color: #d9d9d9;
+}
+
+.sky {
+  position: relative;
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.star {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.message-box {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 20px;
+}
