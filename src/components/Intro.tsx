@@ -1,64 +1,97 @@
 import { motion } from "framer-motion";
 
+import Sparkles from "./Sparkles";
+import "../styles/magic.css";
 import "../styles/intro.css";
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.18 } },
+};
+
+const line = {
+  hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 function Intro() {
   return (
     <section className="intro">
+      <Sparkles count={16} />
+
       <motion.div
-        className="intro-content"
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true, amount: 0.4 }}
+        className="intro-content glass-panel"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <p className="line">
-          Some days are unforgettable.
-        </p>
+        <motion.span className="intro-charm" variants={line}>
+          ✦ ⋆ ｡ ˚ ✦
+        </motion.span>
 
-        <p className="line">
-          Most aren't.
-        </p>
+        <motion.p className="line" variants={line}>
+          Dear Rosie,
+        </motion.p>
 
-        <br />
+        <motion.p className="line" variants={line}>
+          some days sparkle so loud you'd remember them anyway.
+        </motion.p>
 
-        <p className="line">
-          But somehow...
-        </p>
+        <motion.p className="line highlight" variants={line}>
+          It's the quiet ones I worry about losing.
+        </motion.p>
 
-        <p className="line highlight">
-          those ordinary little moments
-          <br />
-          become the ones we miss the most.
-        </p>
+        <motion.div className="divider" variants={line}>
+          ⋆⁺₊✧
+        </motion.div>
 
-        <br />
-        <br />
+        <motion.p className="line" variants={line}>
+          So I started catching them —
+        </motion.p>
 
-        <p className="line">
-          This is for all of them.
-        </p>
+        <motion.p className="line highlight" variants={line}>
+          the tiny, glittering nothings
+        </motion.p>
 
-        <br />
+        <motion.p className="line" variants={line}>
+          and keeping them somewhere safe.
+        </motion.p>
 
-        <p className="line">The tiny victories.</p>
-        <p className="line">The sleepy mornings.</p>
-        <p className="line">The silly conversations.</p>
+        <motion.div className="divider" variants={line}>
+          ⋆⁺₊✧
+        </motion.div>
 
-        <br />
+        <motion.p className="line" variants={line}>
+          The socks that never match.
+        </motion.p>
+        <motion.p className="line" variants={line}>
+          The 2am voice notes.
+        </motion.p>
+        <motion.p className="line" variants={line}>
+          The way you laugh before the joke's even finished.
+        </motion.p>
 
-        <p className="line">
-          The moments that never made it into photo albums...
-        </p>
+        <motion.div className="divider" variants={line}>
+          ⋆⁺₊✧
+        </motion.div>
 
-        <p className="line highlight">
-          but deserved to live forever.
-        </p>
+        <motion.p className="line" variants={line}>
+          None of it would make a photo album.
+        </motion.p>
 
-        <br />
-        <br />
+        <motion.p className="line highlight" variants={line}>
+          All of it makes you, you.
+        </motion.p>
 
-        <h2>Welcome home.</h2>
+        <motion.h2 className="intro-title shimmer-text" variants={line}>
+          Welcome to your little pocket of magic.
+        </motion.h2>
       </motion.div>
     </section>
   );
