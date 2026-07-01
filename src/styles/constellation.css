@@ -1,43 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
 .constellation-page {
   min-height: 100vh;
-  background: #09111f;
+  /* Deep space radial gradient */
+  background: radial-gradient(ellipse at bottom, #111a2c 0%, #05080e 100%);
   color: white;
   text-align: center;
   padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.space-dust {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
 }
 
 .constellation-page h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 4rem;
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .constellation-page p {
-  margin-top: 1rem;
-  color: #d9d9d9;
+  font-size: 1.5rem;
+  color: #a3b8cc;
+  font-style: italic;
 }
 
 .sky {
   position: relative;
-  margin: 4rem auto;
+  margin: 3rem auto;
   width: 100%;
   max-width: 1000px;
-  height: 500px;
+  height: 550px;
   border-radius: 20px;
+  z-index: 2;
 }
 
-.star {
+/* Renamed to avoid conflicts */
+.memory-star {
   position: absolute;
-  background: transparent;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   border: none;
-  color: white;
-  font-size: 1.8rem;
   cursor: pointer;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.15s ease-out;
+  animation: pulseOpacity 4s infinite alternate ease-in-out;
+}
+
+@keyframes pulseOpacity {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
 
 .message-box {
+  position: relative;
   max-width: 700px;
-  margin: auto;
-  padding: 2rem;
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 20px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+.message-box p {
+  font-size: 1.8rem;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  animation: etherealFadeIn 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes etherealFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }

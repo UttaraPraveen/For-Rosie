@@ -1,21 +1,21 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import Sparkles from "./Sparkles";
 import "../styles/magic.css";
 import "../styles/intro.css";
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.18 } },
 };
 
-const line = {
+const line: Variants = {
   hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
   show: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
