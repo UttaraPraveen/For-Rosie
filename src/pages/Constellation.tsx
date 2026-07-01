@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { stars, Star as StarType } from "../data/constellation";
+//import { stars, Star as StarType } from "../data/constellation";
 import "../styles/constellation.css";
 
 // 1. Inlined and renamed to MemoryStar to avoid conflicts with your existing Star.tsx
