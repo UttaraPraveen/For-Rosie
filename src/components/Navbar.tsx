@@ -1,22 +1,22 @@
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 
-import "../styles/magic.css";
+import "../styles/pixel-theme.css";
 import "../styles/navbar.css";
 
 const GREETINGS = [
-  "Hi Rosie! I've been waiting 🎀",
-  "Look who it is!! 💌",
-  "You found me again ✨",
-  "Hehe, hi! I missed you",
-  "Rosie!! My favorite person",
-  "Oh hi!! Perfect timing",
-  "You're here! Yay!!",
-  "Guess who's SO happy right now",
-  "Hi hi hi!! 🌸",
-  "There you are, I was hoping you'd come",
-  "Eek, hi! Come in, come in",
-  "My favorite notification: you",
+  "HI ROSIE! I'VE BEEN WAITING",
+  "LOOK WHO'S HERE!!",
+  "YOU FOUND ME AGAIN",
+  "HEHE HI! MISSED YOU",
+  "ROSIE!! MY FAVORITE PERSON",
+  "OH HI!! PERFECT TIMING",
+  "YOU'RE HERE! YAY",
+  "GUESS WHO'S SO HAPPY RN",
+  "HI HI HI!!",
+  "THERE YOU ARE",
+  "EEK HI! COME IN",
+  "MY FAVORITE NOTIFICATION: YOU",
 ];
 
 function Navbar() {
@@ -27,28 +27,24 @@ function Navbar() {
 
   return (
     <motion.nav
-      className="navbar glass-panel"
-      initial={{ opacity: 0, y: -24 }}
+      className="navbar pixel-panel"
+      initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.4 }}
     >
-      <span className="navbar-brand shimmer-text">for rosie ✦</span>
+      <div className="pixel-titlebar">
+        <span className="navbar-brand">✦ FOR-ROSIE.EXE</span>
+        <div className="window-controls">
+          <span className="win-btn">_</span>
+          <span className="win-btn">□</span>
+          <span className="win-btn win-close">×</span>
+        </div>
+      </div>
 
-      <motion.span
-        className="navbar-greeting"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-      >
-        <motion.span
-          className="navbar-heart"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-        >
-          💗
-        </motion.span>
-        {greeting}
-      </motion.span>
+      <div className="navbar-greeting">
+        <span className="navbar-heart">♥</span>
+        <span className="navbar-marquee">{greeting}</span>
+      </div>
     </motion.nav>
   );
 }

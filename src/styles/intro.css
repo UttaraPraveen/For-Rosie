@@ -7,61 +7,57 @@
   justify-content: center;
   align-items: center;
 
-  padding: 6rem 2rem;
+  padding: 5rem 1.5rem;
 
-  background: linear-gradient(200deg, var(--bg-sky) 0%, var(--bg-lilac) 50%, var(--bg-pink) 100%);
+  background: var(--pixel-bg-3);
+  background-image:
+    linear-gradient(var(--pixel-bg-2) 2px, transparent 2px),
+    linear-gradient(90deg, var(--pixel-bg-2) 2px, transparent 2px);
+  background-size: 32px 32px;
 }
 
-.intro-content {
+.intro-window {
   position: relative;
   z-index: 2;
-  max-width: 720px;
-  text-align: center;
-  padding: 3.5rem 3rem;
-  border-radius: 32px;
+  width: min(600px, 100%);
+  padding: 0;
 }
 
-.intro-charm {
-  display: block;
-  font-family: "Fredoka", sans-serif;
-  color: var(--accent-gold);
-  letter-spacing: 0.3em;
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
+.intro-body {
+  background: var(--pixel-panel);
+  padding: 2rem 1.75rem;
+  text-align: left;
 }
 
 .line {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "VT323", monospace;
   font-size: 1.3rem;
-  color: var(--ink-soft);
-  line-height: 2;
+  color: var(--pixel-ink);
+  line-height: 1.6;
 }
 
 .highlight {
-  font-family: "Caveat", cursive;
-  font-size: 1.9rem;
-  color: var(--accent-pink);
-  font-weight: 600;
+  color: var(--pixel-pink);
+  font-weight: 700;
 }
 
 .divider {
-  margin: 1.75rem 0;
-  color: var(--accent-lilac);
-  font-size: 1.2rem;
-  letter-spacing: 0.4em;
-  animation: twinkle 2.4s ease-in-out infinite;
+  margin: 1rem 0;
+  color: var(--pixel-grey);
+  letter-spacing: 0.5em;
+  text-align: center;
 }
 
 .intro-title {
-  margin-top: 3rem;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  font-weight: 600;
-  font-style: italic;
+  margin-top: 2rem;
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
+  color: var(--pixel-ink);
+  text-shadow: 3px 3px 0 var(--pixel-mint);
+  text-align: center;
+  line-height: 1.6;
 }
 
 @media (max-width: 600px) {
-  .intro-content {
-    padding: 2.5rem 1.5rem;
-  }
+  .intro-body { padding: 1.5rem 1.25rem; }
 }

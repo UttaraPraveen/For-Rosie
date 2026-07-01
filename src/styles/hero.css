@@ -8,131 +8,124 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 1.5rem;
 
-  padding: 2rem;
+  padding: 6rem 1.5rem 2rem;
 
-  background: linear-gradient(160deg, var(--bg-pink) 0%, var(--bg-lilac) 55%, var(--bg-sky) 100%);
+  background: var(--pixel-bg-1);
+  background-image:
+    linear-gradient(var(--pixel-bg-2) 2px, transparent 2px),
+    linear-gradient(90deg, var(--pixel-bg-2) 2px, transparent 2px);
+  background-size: 32px 32px;
 }
 
-.hero-aurora {
+.hero-grid-bg {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.55;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
-  animation: drift 14s ease-in-out infinite;
-}
-
-.aurora-1 {
-  width: 420px;
-  height: 420px;
-  top: -10%;
-  left: -8%;
-  background: radial-gradient(circle, var(--accent-pink), transparent 70%);
-}
-
-.aurora-2 {
-  width: 380px;
-  height: 380px;
-  bottom: -12%;
-  right: -6%;
-  background: radial-gradient(circle, var(--accent-lilac), transparent 70%);
-  animation-delay: 3s;
-  animation-duration: 18s;
-}
-
-.aurora-3 {
-  width: 320px;
-  height: 320px;
-  top: 40%;
-  left: 60%;
-  background: radial-gradient(circle, var(--accent-mint), transparent 70%);
-  animation-delay: 6s;
-  animation-duration: 16s;
+  background: radial-gradient(circle at 30% 20%, var(--pixel-bg-3) 0%, transparent 50%);
 }
 
 .hero-glow {
   position: absolute;
   top: 0;
   left: 0;
-  width: 260px;
-  height: 260px;
-  margin-left: -130px;
-  margin-top: -130px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 217, 125, 0.35), transparent 70%);
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  background: var(--pixel-gold);
+  opacity: 0.3;
   pointer-events: none;
   z-index: 1;
-  mix-blend-mode: screen;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
-.hero-eyebrow {
+.crt {
   position: relative;
   z-index: 2;
-  font-family: "Fredoka", sans-serif;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  font-size: clamp(0.85rem, 2vw, 1.1rem);
-  font-weight: 500;
-  color: var(--ink-soft);
-  margin-bottom: -0.5rem;
+  width: min(320px, 80vw);
+  padding: 0;
+}
+
+.crt-screen {
+  position: relative;
+  background: #d8dcf0;
+  min-height: 130px;
+  padding: 1rem;
+  text-align: left;
+  overflow: hidden;
+}
+
+.crt-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.08) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+.crt-line {
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  color: var(--pixel-ink);
+  margin: 0.2rem 0;
+}
+
+.crt-cursor {
+  font-family: "VT323", monospace;
+  color: var(--pixel-ink);
+  animation: blink-cursor 1s steps(1) infinite;
 }
 
 .hero-name {
   position: relative;
   z-index: 2;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(6rem, 16vw, 10rem);
-  font-weight: 600;
-  font-style: italic;
-  line-height: 0.9;
-  margin: 0.5rem 0 2.5rem;
-  filter: drop-shadow(0 4px 24px var(--glow-pink));
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(1.5rem, 6vw, 2.6rem);
+  color: var(--pixel-ink);
+  text-shadow: 4px 4px 0 var(--pixel-pink), 8px 8px 0 var(--pixel-black);
+  letter-spacing: 0.05em;
 }
 
 .hero-tagline {
   position: relative;
   z-index: 2;
-  max-width: 420px;
-  color: var(--ink-soft);
-  line-height: 2;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.15rem;
-}
-
-.italic-glow {
-  font-family: "Caveat", cursive;
-  font-size: 1.5rem;
-  color: var(--accent-pink);
+  max-width: 380px;
+  font-family: "VT323", monospace;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--pixel-ink);
 }
 
 .scroll-cue {
   position: absolute;
-  bottom: 48px;
+  bottom: 32px;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  color: var(--ink-soft);
+  gap: 0.3rem;
+  color: var(--pixel-grey);
 }
 
-.scroll-star {
-  font-size: 1.6rem;
-  color: var(--accent-gold);
-  text-shadow: 0 0 10px var(--glow-pink);
+.scroll-arrow {
+  font-size: 1.2rem;
+  color: var(--pixel-pink);
 }
 
 .scroll-label {
-  font-family: "Fredoka", sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
 }
 
 @media (max-width: 480px) {
-  .hero-aurora {
-    display: none;
-  }
+  .hero { padding-top: 7rem; }
 }

@@ -1,55 +1,42 @@
 .navbar {
   position: fixed;
-  top: 1.25rem;
+  top: 1rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
-
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
-
-  max-width: calc(100% - 2rem);
+  width: min(420px, calc(100% - 2rem));
+  padding: 0;
+  overflow: hidden;
 }
 
 .navbar-brand {
-  font-family: "Fredoka", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
   letter-spacing: 0.05em;
-  white-space: nowrap;
 }
 
 .navbar-greeting {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-
-  font-family: "Caveat", cursive;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--accent-pink);
-  white-space: nowrap;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--pixel-panel);
 }
 
 .navbar-heart {
-  display: inline-block;
-  font-size: 1rem;
+  color: var(--pixel-pink);
+  font-size: 0.9rem;
+  animation: pixel-float 1s steps(4) infinite;
 }
 
-@media (max-width: 560px) {
-  .navbar {
-    flex-direction: column;
-    gap: 0.35rem;
-    padding: 0.6rem 1.25rem;
-    border-radius: 24px;
-    top: 0.75rem;
-  }
+.navbar-marquee {
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  color: var(--pixel-ink);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .navbar-greeting {
-    font-size: 1.1rem;
-  }
+@media (max-width: 480px) {
+  .navbar-marquee { font-size: 1rem; }
 }
